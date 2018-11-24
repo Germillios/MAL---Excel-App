@@ -5,7 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MAL3"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    <Window.Resources>
+        <CollectionViewSource x:Key="animelist_1538511199_3585579ViewSource" d:DesignSource="{d:DesignInstance {x:Type local:animelist_1538511199_3585579}, CreateList=True}"/>
+        <CollectionViewSource x:Key="anime_ilosc_ver2ViewSource" d:DesignSource="{d:DesignInstance {x:Type local:anime_ilosc_ver2}, CreateList=True}"/>
+    </Window.Resources>
     <Grid>
         
     </Grid>

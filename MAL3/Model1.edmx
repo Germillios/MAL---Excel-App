@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MalAppDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="anime_ilosc_ver2">
+          <Key>
+            <PropertyRef Name="Nazwa" />
+          </Key>
+          <Property Name="Nazwa" Type="nvarchar" MaxLength="76" Nullable="false" />
+          <Property Name="None" Type="nvarchar" MaxLength="4" />
+          <Property Name="None2" Type="int" />
+          <Property Name="None3" Type="int" />
+          <Property Name="None4" Type="int" />
+          <Property Name="None5" Type="int" />
+          <Property Name="None6" Type="int" />
+          <Property Name="Liczba_odcink_w" Type="int" />
+          <Property Name="Rodzaj" Type="nvarchar" MaxLength="26" />
+          <Property Name="Status_My" Type="nvarchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="animelist_1538511199_3585579">
+          <Key>
+            <PropertyRef Name="myanimelist_anime_series_title" />
+          </Key>
+          <Property Name="myanimelist" Type="int" />
+          <Property Name="myanimelist_myinfo" Type="int" />
+          <Property Name="myanimelist_myinfo_user_id" Type="int" />
+          <Property Name="myanimelist_myinfo_user_name" Type="nvarchar" MaxLength="6" />
+          <Property Name="myanimelist_myinfo_user_export_type" Type="int" />
+          <Property Name="myanimelist_myinfo_user_total_anime" Type="int" />
+          <Property Name="myanimelist_myinfo_user_total_watching" Type="int" />
+          <Property Name="myanimelist_myinfo_user_total_completed" Type="int" />
+          <Property Name="myanimelist_myinfo_user_total_onhold" Type="int" />
+          <Property Name="myanimelist_myinfo_user_total_dropped" Type="int" />
+          <Property Name="myanimelist_myinfo_user_total_plantowatch" Type="int" />
+          <Property Name="myanimelist_anime" Type="int" />
+          <Property Name="myanimelist_anime_series_animedb_id" Type="int" />
+          <Property Name="myanimelist_anime_series_title" Type="nvarchar" MaxLength="98" Nullable="false" />
+          <Property Name="myanimelist_anime_series_type" Type="nvarchar" MaxLength="7" />
+          <Property Name="myanimelist_anime_series_episodes" Type="int" />
+          <Property Name="myanimelist_anime_my_id" Type="int" />
+          <Property Name="myanimelist_anime_my_watched_episodes" Type="int" />
+          <Property Name="myanimelist_anime_my_start_date" Type="nvarchar" MaxLength="10" />
+          <Property Name="myanimelist_anime_my_finish_date" Type="nvarchar" MaxLength="10" />
+          <Property Name="myanimelist_anime_my_rated" Type="int" />
+          <Property Name="myanimelist_anime_my_score" Type="int" />
+          <Property Name="myanimelist_anime_my_dvd" Type="int" />
+          <Property Name="myanimelist_anime_my_storage" Type="int" />
+          <Property Name="myanimelist_anime_my_status" Type="nvarchar" MaxLength="13" />
+          <Property Name="myanimelist_anime_my_comments" Type="int" />
+          <Property Name="myanimelist_anime_my_times_watched" Type="int" />
+          <Property Name="myanimelist_anime_my_rewatch_value" Type="int" />
+          <Property Name="myanimelist_anime_my_tags" Type="int" />
+          <Property Name="myanimelist_anime_my_rewatching" Type="int" />
+          <Property Name="myanimelist_anime_my_rewatching_ep" Type="int" />
+          <Property Name="myanimelist_anime_update_on_import" Type="int" />
+        </EntityType>
+        <EntityContainer Name="MalAppDBModelStoreContainer">
+          <EntitySet Name="anime_ilosc_ver2" EntityType="Self.anime_ilosc_ver2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="animelist_1538511199_3585579" EntityType="Self.animelist_1538511199_3585579" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MalAppDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="anime_ilosc_ver2">
+          <Key>
+            <PropertyRef Name="Nazwa" />
+          </Key>
+          <Property Name="Nazwa" Type="String" MaxLength="76" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="None" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="None2" Type="Int32" />
+          <Property Name="None3" Type="Int32" />
+          <Property Name="None4" Type="Int32" />
+          <Property Name="None5" Type="Int32" />
+          <Property Name="None6" Type="Int32" />
+          <Property Name="Liczba_odcink_w" Type="Int32" />
+          <Property Name="Rodzaj" Type="String" MaxLength="26" FixedLength="false" Unicode="true" />
+          <Property Name="Status_My" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="animelist_1538511199_3585579">
+          <Key>
+            <PropertyRef Name="myanimelist_anime_series_title" />
+          </Key>
+          <Property Name="myanimelist" Type="Int32" />
+          <Property Name="myanimelist_myinfo" Type="Int32" />
+          <Property Name="myanimelist_myinfo_user_id" Type="Int32" />
+          <Property Name="myanimelist_myinfo_user_name" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="myanimelist_myinfo_user_export_type" Type="Int32" />
+          <Property Name="myanimelist_myinfo_user_total_anime" Type="Int32" />
+          <Property Name="myanimelist_myinfo_user_total_watching" Type="Int32" />
+          <Property Name="myanimelist_myinfo_user_total_completed" Type="Int32" />
+          <Property Name="myanimelist_myinfo_user_total_onhold" Type="Int32" />
+          <Property Name="myanimelist_myinfo_user_total_dropped" Type="Int32" />
+          <Property Name="myanimelist_myinfo_user_total_plantowatch" Type="Int32" />
+          <Property Name="myanimelist_anime" Type="Int32" />
+          <Property Name="myanimelist_anime_series_animedb_id" Type="Int32" />
+          <Property Name="myanimelist_anime_series_title" Type="String" MaxLength="98" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="myanimelist_anime_series_type" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="myanimelist_anime_series_episodes" Type="Int32" />
+          <Property Name="myanimelist_anime_my_id" Type="Int32" />
+          <Property Name="myanimelist_anime_my_watched_episodes" Type="Int32" />
+          <Property Name="myanimelist_anime_my_start_date" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="myanimelist_anime_my_finish_date" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="myanimelist_anime_my_rated" Type="Int32" />
+          <Property Name="myanimelist_anime_my_score" Type="Int32" />
+          <Property Name="myanimelist_anime_my_dvd" Type="Int32" />
+          <Property Name="myanimelist_anime_my_storage" Type="Int32" />
+          <Property Name="myanimelist_anime_my_status" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="myanimelist_anime_my_comments" Type="Int32" />
+          <Property Name="myanimelist_anime_my_times_watched" Type="Int32" />
+          <Property Name="myanimelist_anime_my_rewatch_value" Type="Int32" />
+          <Property Name="myanimelist_anime_my_tags" Type="Int32" />
+          <Property Name="myanimelist_anime_my_rewatching" Type="Int32" />
+          <Property Name="myanimelist_anime_my_rewatching_ep" Type="Int32" />
+          <Property Name="myanimelist_anime_update_on_import" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="MalAppDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="anime_ilosc_ver2" EntityType="Self.anime_ilosc_ver2" />
+          <EntitySet Name="animelist_1538511199_3585579" EntityType="Self.animelist_1538511199_3585579" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MalAppDBModelStoreContainer" CdmEntityContainer="MalAppDBEntities">
+          <EntitySetMapping Name="anime_ilosc_ver2">
+            <EntityTypeMapping TypeName="MalAppDBModel.anime_ilosc_ver2">
+              <MappingFragment StoreEntitySet="anime_ilosc_ver2">
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="None" ColumnName="None" />
+                <ScalarProperty Name="None2" ColumnName="None2" />
+                <ScalarProperty Name="None3" ColumnName="None3" />
+                <ScalarProperty Name="None4" ColumnName="None4" />
+                <ScalarProperty Name="None5" ColumnName="None5" />
+                <ScalarProperty Name="None6" ColumnName="None6" />
+                <ScalarProperty Name="Liczba_odcink_w" ColumnName="Liczba_odcink_w" />
+                <ScalarProperty Name="Rodzaj" ColumnName="Rodzaj" />
+                <ScalarProperty Name="Status_My" ColumnName="Status_My" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="animelist_1538511199_3585579">
+            <EntityTypeMapping TypeName="MalAppDBModel.animelist_1538511199_3585579">
+              <MappingFragment StoreEntitySet="animelist_1538511199_3585579">
+                <ScalarProperty Name="myanimelist" ColumnName="myanimelist" />
+                <ScalarProperty Name="myanimelist_myinfo" ColumnName="myanimelist_myinfo" />
+                <ScalarProperty Name="myanimelist_myinfo_user_id" ColumnName="myanimelist_myinfo_user_id" />
+                <ScalarProperty Name="myanimelist_myinfo_user_name" ColumnName="myanimelist_myinfo_user_name" />
+                <ScalarProperty Name="myanimelist_myinfo_user_export_type" ColumnName="myanimelist_myinfo_user_export_type" />
+                <ScalarProperty Name="myanimelist_myinfo_user_total_anime" ColumnName="myanimelist_myinfo_user_total_anime" />
+                <ScalarProperty Name="myanimelist_myinfo_user_total_watching" ColumnName="myanimelist_myinfo_user_total_watching" />
+                <ScalarProperty Name="myanimelist_myinfo_user_total_completed" ColumnName="myanimelist_myinfo_user_total_completed" />
+                <ScalarProperty Name="myanimelist_myinfo_user_total_onhold" ColumnName="myanimelist_myinfo_user_total_onhold" />
+                <ScalarProperty Name="myanimelist_myinfo_user_total_dropped" ColumnName="myanimelist_myinfo_user_total_dropped" />
+                <ScalarProperty Name="myanimelist_myinfo_user_total_plantowatch" ColumnName="myanimelist_myinfo_user_total_plantowatch" />
+                <ScalarProperty Name="myanimelist_anime" ColumnName="myanimelist_anime" />
+                <ScalarProperty Name="myanimelist_anime_series_animedb_id" ColumnName="myanimelist_anime_series_animedb_id" />
+                <ScalarProperty Name="myanimelist_anime_series_title" ColumnName="myanimelist_anime_series_title" />
+                <ScalarProperty Name="myanimelist_anime_series_type" ColumnName="myanimelist_anime_series_type" />
+                <ScalarProperty Name="myanimelist_anime_series_episodes" ColumnName="myanimelist_anime_series_episodes" />
+                <ScalarProperty Name="myanimelist_anime_my_id" ColumnName="myanimelist_anime_my_id" />
+                <ScalarProperty Name="myanimelist_anime_my_watched_episodes" ColumnName="myanimelist_anime_my_watched_episodes" />
+                <ScalarProperty Name="myanimelist_anime_my_start_date" ColumnName="myanimelist_anime_my_start_date" />
+                <ScalarProperty Name="myanimelist_anime_my_finish_date" ColumnName="myanimelist_anime_my_finish_date" />
+                <ScalarProperty Name="myanimelist_anime_my_rated" ColumnName="myanimelist_anime_my_rated" />
+                <ScalarProperty Name="myanimelist_anime_my_score" ColumnName="myanimelist_anime_my_score" />
+                <ScalarProperty Name="myanimelist_anime_my_dvd" ColumnName="myanimelist_anime_my_dvd" />
+                <ScalarProperty Name="myanimelist_anime_my_storage" ColumnName="myanimelist_anime_my_storage" />
+                <ScalarProperty Name="myanimelist_anime_my_status" ColumnName="myanimelist_anime_my_status" />
+                <ScalarProperty Name="myanimelist_anime_my_comments" ColumnName="myanimelist_anime_my_comments" />
+                <ScalarProperty Name="myanimelist_anime_my_times_watched" ColumnName="myanimelist_anime_my_times_watched" />
+                <ScalarProperty Name="myanimelist_anime_my_rewatch_value" ColumnName="myanimelist_anime_my_rewatch_value" />
+                <ScalarProperty Name="myanimelist_anime_my_tags" ColumnName="myanimelist_anime_my_tags" />
+                <ScalarProperty Name="myanimelist_anime_my_rewatching" ColumnName="myanimelist_anime_my_rewatching" />
+                <ScalarProperty Name="myanimelist_anime_my_rewatching_ep" ColumnName="myanimelist_anime_my_rewatching_ep" />
+                <ScalarProperty Name="myanimelist_anime_update_on_import" ColumnName="myanimelist_anime_update_on_import" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
