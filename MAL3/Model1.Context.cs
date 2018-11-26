@@ -27,5 +27,7 @@ namespace MAL3
     
         public virtual DbSet<anime_ilosc_ver2> anime_ilosc_ver2 { get; set; }
         public virtual DbSet<animelist_1538511199_3585579> animelist_1538511199_3585579 { get; set; }
+        public virtual DbSet<manga_ilosc> manga_ilosc { get; set; }
+        public virtual DbSet<mangalist_1538511219_3585579> mangalist_1538511219_3585579 { get; set; }
     }
 }

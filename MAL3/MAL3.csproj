@@ -84,6 +84,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="mangalist_1538511219_3585579.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="manga_ilosc.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

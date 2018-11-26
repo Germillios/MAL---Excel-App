@@ -4,9 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="23e5e146b88c4d01a0aeba47cc2b7133" Name="Diagram1">
+      <Diagram DiagramId="23e5e146b88c4d01a0aeba47cc2b7133" Name="Diagram1" ZoomLevel="94">
         <EntityTypeShape EntityType="MalAppDBModel.anime_ilosc_ver2" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MalAppDBModel.animelist_1538511199_3585579" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MalAppDBModel.manga_ilosc" Width="1.5" PointX="5.125" PointY="0.75" />
+        <EntityTypeShape EntityType="MalAppDBModel.mangalist_1538511219_3585579" Width="1.5" PointX="7.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
