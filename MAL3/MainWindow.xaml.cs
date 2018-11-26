@@ -31,11 +31,32 @@ namespace MAL3
             animelist_1538511199_3585579ViewSource = (CollectionViewSource)FindResource("animelist_1538511199_3585579ViewSource");
             DataContext = this;
         }
-
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             context.anime_ilosc_ver2.Load();
+            context.animelist_1538511199_3585579.Load();
             anime_ilosc_ver2ViewSource.Source = context.anime_ilosc_ver2.Local;
+            animelist_1538511199_3585579ViewSource.Source = context.animelist_1538511199_3585579.Local;
+        }
+        private void FirstCommandHandler(object sender, ExecutedRoutedEventArgs e)
+        {
+            anime_ilosc_ver2ViewSource.View.MoveCurrentToFirst();
+        }
+        private void PreviousCommandHandler(object sender, ExecutedRoutedEventArgs e)
+        {
+            anime_ilosc_ver2ViewSource.View.MoveCurrentToPrevious();
+        }
+        private void NextCommandHandler(object sender, ExecutedRoutedEventArgs e)
+        {
+            anime_ilosc_ver2ViewSource.View.MoveCurrentToNext();
+        }
+        private void LastCommandHandler(object sender, ExecutedRoutedEventArgs e)
+        {
+            anime_ilosc_ver2ViewSource.View.MoveCurrentToLast();
+        }
+        private void UpdateCommandHandler(object sender, ExecutedRoutedEventArgs e)
+        {
+            context.SaveChanges();
         }
     }
 }

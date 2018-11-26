@@ -14,6 +14,7 @@ namespace MAL3
     
     public partial class anime_ilosc_ver2
     {
+        public int ID { get; set; }
         public string Nazwa { get; set; }
         public string None { get; set; }
         public Nullable<int> None2 { get; set; }
