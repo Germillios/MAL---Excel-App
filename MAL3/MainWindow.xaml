@@ -70,7 +70,11 @@
                 <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="53 52">
                     <TextBox x:Name="status_MyTextBox" HorizontalAlignment="Left" Height="23" Margin="3,3,0,3" Text="{Binding Status_My, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
                     <TextBox x:Name="rodzajTextBox" HorizontalAlignment="Left" Height="23" Margin="3" Text="{Binding Rodzaj, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
-                    <TextBox x:Name="liczba_odcink_wTextBox" HorizontalAlignment="Left" Height="23" Margin="3" Text="{Binding Liczba_odcink_w, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox x:Name="progressTextBox" HorizontalAlignment="Left" Height="23" Margin="3" Text="{Binding Progress, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+                        <Label Content="/"/>
+                        <TextBox x:Name="liczba_odcink_wTextBox" HorizontalAlignment="Left" Height="23" Margin="3" Text="{Binding Liczba_odcink_w, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+                    </StackPanel>
                     <!--<Button x:Name="btnDeleteA" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="36 6" Command="{StaticResource DeleteCommand}" Style="{StaticResource NavigationButton}"/>-->
                 </StackPanel>
             </Grid>
@@ -126,7 +130,11 @@
                 </StackPanel>
                 <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="53,52,53.231,0">
                     <TextBox x:Name="status_MyTextBoxM" HorizontalAlignment="Left" Height="23" Margin="3,3,0,3" Text="{Binding Status_My, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
-                    <TextBox x:Name="liczba_rozdzia_wTextBox" HorizontalAlignment="Left" Height="23" Margin="3" Text="{Binding Liczba_rozdzia_w, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox x:Name="chapters__progressTextBox" HorizontalAlignment="Left" Height="23" Margin="3" Text="{Binding Chapters__progress, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+                        <Label Content="/"/>
+                        <TextBox x:Name="liczba_rozdzia_wTextBox" HorizontalAlignment="Left" Height="23" Margin="3" Text="{Binding Liczba_rozdzia_w, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+                    </StackPanel>
                     <TextBox x:Name="rodzajTextBox1" HorizontalAlignment="Left" Height="23" Margin="3" Text="{Binding Rodzaj, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
                 </StackPanel>
                 <!--<Button x:Name="btnDeleteM" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="36 6" Command="{StaticResource DeleteCommand}" Style="{StaticResource NavigationButton}"/>

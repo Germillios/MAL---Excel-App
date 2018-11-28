@@ -16,14 +16,14 @@ namespace MAL3
     {
         public int ID { get; set; }
         public string Nazwa { get; set; }
-        public Nullable<int> None { get; set; }
+        public string Status_My { get; set; }
+        public Nullable<int> Chapters__progress { get; set; }
+        public Nullable<int> Liczba_rozdzia_w { get; set; }
+        public string Rodzaj { get; set; }
         public Nullable<int> None1 { get; set; }
         public Nullable<int> None2 { get; set; }
         public Nullable<int> None3 { get; set; }
         public Nullable<int> None4 { get; set; }
         public Nullable<int> None5 { get; set; }
-        public Nullable<int> Liczba_rozdzia_w { get; set; }
-        public string Rodzaj { get; set; }
-        public string Status_My { get; set; }
     }
 }
