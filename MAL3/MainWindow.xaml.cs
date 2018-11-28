@@ -27,6 +27,9 @@ namespace MAL3
         public MainWindow()
         {
             InitializeComponent();
+            //List<anime_ilosc_ver2> items = new List<anime_ilosc_ver2>();
+            //items.Add(new anime_ilosc_ver2 { Nazwa = "Anime 20" });
+            //SearchResultsA.ItemsSource = items;
             anime_ilosc_ver2ViewSource = (CollectionViewSource)FindResource("anime_ilosc_ver2ViewSource");
             animelist_1538511199_3585579ViewSource = (CollectionViewSource)FindResource("animelist_1538511199_3585579ViewSource");
             manga_iloscViewSource = (CollectionViewSource)FindResource("manga_iloscViewSource");
@@ -42,7 +45,7 @@ namespace MAL3
             anime_ilosc_ver2ViewSource.Source = context.anime_ilosc_ver2.Local;
             animelist_1538511199_3585579ViewSource.Source = context.animelist_1538511199_3585579.Local;
             manga_iloscViewSource.Source = context.manga_ilosc.Local;
-            mangalist_1538511219_3585579ViewSource.Source = context.mangalist_1538511219_3585579.Local;
+            mangalist_1538511219_3585579ViewSource.Source = context.mangalist_1538511219_3585579.Local;           
         }
         private void FirstCommandHandler(object sender, ExecutedRoutedEventArgs e)
         {
@@ -175,5 +178,9 @@ namespace MAL3
                     selectedViewSource = manga_iloscViewSource;
             }
         }
+    }
+    public class Anime
+    {
+        public string Name { get; set; }
     }
 }

@@ -69,9 +69,12 @@
                 </StackPanel>
                 <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="53 52">
                     <TextBox x:Name="status_MyTextBox" HorizontalAlignment="Left" Height="23" Margin="3,3,0,3" Text="{Binding Status_My, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
-                    <Button x:Name="btnDeleteA" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="36 6" Command="{StaticResource DeleteCommand}" Style="{StaticResource NavigationButton}"/>
+                    <TextBox x:Name="rodzajTextBox" HorizontalAlignment="Left" Height="23" Margin="3" Text="{Binding Rodzaj, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+                    <TextBox x:Name="liczba_odcink_wTextBox" HorizontalAlignment="Left" Height="23" Margin="3" Text="{Binding Liczba_odcink_w, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+                    <!--<Button x:Name="btnDeleteA" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="36 6" Command="{StaticResource DeleteCommand}" Style="{StaticResource NavigationButton}"/>-->
                 </StackPanel>
-                <Separator HorizontalAlignment="Left" Height="100" Margin="6,73,0,0" VerticalAlignment="Top" Width="400"/>
+            </Grid>
+                <!--<Separator HorizontalAlignment="Left" Height="100" Margin="6,73,0,0" VerticalAlignment="Top" Width="400"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="55 142">
                     <TextBox x:Name="searchTextBoxA" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120"/>
                     <Button x:Name="btnSearchA" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource NavigationButton}" Height="16" Margin="1">
@@ -85,7 +88,13 @@
                     <RadioButton x:Name="GenreSelectedA" Content="Genre" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4 0"/>
                     <RadioButton x:Name="ScoreSelectedA" Content="Score" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4 0"/>
                 </StackPanel>
-            </Grid>
+                <ListView x:Name="SearchResultsA" HorizontalAlignment="Left" VerticalAlignment="Top" Width="329" Margin="48,192,0,0" Height="182">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Name" Width="120" DisplayMemberBinding="{Binding Nazwa}"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>-->
         </TabItem>
         <TabItem x:Name="MangaList" Header="MangaList">
             <Grid Background="White" DataContext="{StaticResource manga_iloscViewSource}">
@@ -117,7 +126,10 @@
                 </StackPanel>
                 <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="53,52,53.231,0">
                     <TextBox x:Name="status_MyTextBoxM" HorizontalAlignment="Left" Height="23" Margin="3,3,0,3" Text="{Binding Status_My, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
-                    <Button x:Name="btnDeleteM" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="36 6" Command="{StaticResource DeleteCommand}" Style="{StaticResource NavigationButton}"/>
+                    <TextBox x:Name="liczba_rozdzia_wTextBox" HorizontalAlignment="Left" Height="23" Margin="3" Text="{Binding Liczba_rozdzia_w, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+                    <TextBox x:Name="rodzajTextBox1" HorizontalAlignment="Left" Height="23" Margin="3" Text="{Binding Rodzaj, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+                </StackPanel>
+                <!--<Button x:Name="btnDeleteM" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="36 6" Command="{StaticResource DeleteCommand}" Style="{StaticResource NavigationButton}"/>
                 </StackPanel>
                 <Separator HorizontalAlignment="Left" Height="100" Margin="6,73,0,0" VerticalAlignment="Top" Width="400"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="55 142">
@@ -133,6 +145,13 @@
                     <RadioButton x:Name="GenreSelectedM" Content="Genre" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4 0"/>
                     <RadioButton x:Name="ScoreSelectedM" Content="Score" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4 0"/>
                 </StackPanel>
+                <ListView x:Name="SearchResultsM" HorizontalAlignment="Left" VerticalAlignment="Top" Width="329" Margin="48,192,0,0" Height="182">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Name" Width="120" DisplayMemberBinding="{Binding Nazwa}"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>-->
             </Grid>
         </TabItem>
         <TabItem x:Name="AddNewItem" Header="Add New">
