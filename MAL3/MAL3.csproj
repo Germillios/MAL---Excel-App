@@ -132,6 +132,8 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\animelist_1538511199_3585579.datasource" />
     <None Include="Properties\DataSources\anime_ilosc_ver2.datasource" />
+    <None Include="Properties\DataSources\mangalist_1538511219_3585579.datasource" />
+    <None Include="Properties\DataSources\manga_ilosc.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -153,6 +155,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Pictures\Lupa.png" />
     <Resource Include="Pictures\First.png" />
     <Resource Include="Pictures\Last.png" />
     <Resource Include="Pictures\Next.png" />

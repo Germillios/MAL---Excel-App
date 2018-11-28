@@ -9,11 +9,16 @@
     <Window.Resources>
         <CollectionViewSource x:Key="animelist_1538511199_3585579ViewSource" d:DesignSource="{d:DesignInstance {x:Type local:animelist_1538511199_3585579}, CreateList=True}"/>
         <CollectionViewSource x:Key="anime_ilosc_ver2ViewSource" d:DesignSource="{d:DesignInstance {x:Type local:anime_ilosc_ver2}, CreateList=True}"/>
+        <CollectionViewSource x:Key="mangalist_1538511219_3585579ViewSource" d:DesignSource="{d:DesignInstance {x:Type local:mangalist_1538511219_3585579}, CreateList=True}"/>
+        <CollectionViewSource x:Key="manga_iloscViewSource" d:DesignSource="{d:DesignInstance {x:Type local:manga_ilosc}, CreateList=True}"/>
         <RoutedUICommand x:Key="FirstCommand" Text="First"/>
         <RoutedUICommand x:Key="PreviousCommand" Text="Previous"/>
         <RoutedUICommand x:Key="NextCommand" Text="Next"/>
         <RoutedUICommand x:Key="LastCommand" Text="Last"/>
         <RoutedUICommand x:Key="UpdateCommand" Text="Update"/>
+        <RoutedUICommand x:Key="AddCommand" Text="Add"/>
+        <RoutedUICommand x:Key="CancelAddingComand" Text="Cancel"/>
+        <RoutedUICommand x:Key="DeleteCommand" Text="Delete"/>
         <Style x:Key="NavigationButton" TargetType="{x:Type Button}" BasedOn="{x:Null}">
             <Setter Property="FontFamily" Value="Arial"/>
             <Setter Property="FontSize" Value="15"/>
@@ -29,22 +34,17 @@
         <CommandBinding Command="{StaticResource NextCommand}" Executed="NextCommandHandler"/>
         <CommandBinding Command="{StaticResource LastCommand}" Executed="LastCommandHandler"/>
         <CommandBinding Command="{StaticResource UpdateCommand}" Executed="UpdateCommandHandler"/>
+        <CommandBinding Command="{StaticResource AddCommand}" Executed="AddCommandHandler"/>
+        <CommandBinding Command="{StaticResource CancelAddingComand}" Executed="CancelCommandHandler"/>
+        <CommandBinding Command="{StaticResource DeleteCommand}" Executed="DeleteCommandHandler"/>
     </Window.CommandBindings>
-    <TabControl HorizontalAlignment="Left" VerticalAlignment="Top" Width="795" Height="420">
-        <TabItem Header="Anime List">
+    <TabControl HorizontalAlignment="Left" VerticalAlignment="Top" Width="795" Height="420" SelectionChanged="TabControl_SelectionChanged">
+        <TabItem x:Name="AnimeList" Header="Anime List">
             <Grid Background="White" DataContext="{StaticResource anime_ilosc_ver2ViewSource}">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="61*"/>
-                    <RowDefinition Height="332*"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="37*"/>
-                    <ColumnDefinition Width="226*"/>
-                </Grid.ColumnDefinitions>
                 <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Left">
                     <Button x:Name="btnUpdate" Content="Update List" Command="{StaticResource UpdateCommand}" Style="{StaticResource NavigationButton}"/>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="25,25,0,0" Grid.ColumnSpan="2">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="25,25,0,0">
                     <Button x:Name="btnFirst" Command="{StaticResource FirstCommand}" Style="{StaticResource NavigationButton}">
                         <StackPanel>
                             <Image Source="Pictures/First.png"/>
@@ -67,16 +67,89 @@
                         </StackPanel>
                     </Button>
                 </StackPanel>
-                <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="53,52,53.231,0" Grid.ColumnSpan="2" Grid.RowSpan="2">
+                <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="53 52">
                     <TextBox x:Name="status_MyTextBox" HorizontalAlignment="Left" Height="23" Margin="3,3,0,3" Text="{Binding Status_My, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+                    <Button x:Name="btnDeleteA" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="36 6" Command="{StaticResource DeleteCommand}" Style="{StaticResource NavigationButton}"/>
+                </StackPanel>
+                <Separator HorizontalAlignment="Left" Height="100" Margin="6,73,0,0" VerticalAlignment="Top" Width="400"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="55 142">
+                    <TextBox x:Name="searchTextBoxA" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120"/>
+                    <Button x:Name="btnSearchA" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource NavigationButton}" Height="16" Margin="1">
+                        <StackPanel>
+                            <Image Source="Pictures/Lupa.png"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="56 162">
+                    <RadioButton x:Name="StatusSelectedA" Content="Status" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <RadioButton x:Name="GenreSelectedA" Content="Genre" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4 0"/>
+                    <RadioButton x:Name="ScoreSelectedA" Content="Score" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4 0"/>
                 </StackPanel>
             </Grid>
         </TabItem>
-        <TabItem Header="MangaList">
-            <Grid Background="White"/>
+        <TabItem x:Name="MangaList" Header="MangaList">
+            <Grid Background="White" DataContext="{StaticResource manga_iloscViewSource}">
+                <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Left">
+                    <Button x:Name="btnUpdateM" Content="Update List" Command="{StaticResource UpdateCommand}" Style="{StaticResource NavigationButton}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="25,25,0,0">
+                    <Button x:Name="btnFirstM" Command="{StaticResource FirstCommand}" Style="{StaticResource NavigationButton}">
+                        <StackPanel>
+                            <Image Source="Pictures/First.png"/>
+                        </StackPanel>
+                    </Button>
+                    <Button x:Name="btnPreviousM" Command="{StaticResource PreviousCommand}" Style="{StaticResource NavigationButton}">
+                        <StackPanel>
+                            <Image Source="Pictures/Previous.png"/>
+                        </StackPanel>
+                    </Button>
+                    <TextBox x:Name="nazwaTextBoxM" HorizontalAlignment="Left" Height="23" Margin="3" Text="{Binding Nazwa, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+                    <Button x:Name="btnNextM" Command="{StaticResource NextCommand}" Style="{StaticResource NavigationButton}">
+                        <StackPanel>
+                            <Image Source="Pictures/Next.png"/>
+                        </StackPanel>
+                    </Button>
+                    <Button x:Name="btnLastM" Command="{StaticResource LastCommand}" Style="{StaticResource NavigationButton}">
+                        <StackPanel>
+                            <Image Source="Pictures/Last.png"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="53,52,53.231,0">
+                    <TextBox x:Name="status_MyTextBoxM" HorizontalAlignment="Left" Height="23" Margin="3,3,0,3" Text="{Binding Status_My, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+                    <Button x:Name="btnDeleteM" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="36 6" Command="{StaticResource DeleteCommand}" Style="{StaticResource NavigationButton}"/>
+                </StackPanel>
+                <Separator HorizontalAlignment="Left" Height="100" Margin="6,73,0,0" VerticalAlignment="Top" Width="400"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="55 142">
+                    <TextBox x:Name="searchTextBoxM" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120"/>
+                    <Button x:Name="btnSearchM" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource NavigationButton}" Height="16" Margin="1">
+                        <StackPanel>
+                            <Image Source="Pictures/Lupa.png"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="56 162">
+                    <RadioButton x:Name="StatusSelectedM" Content="Status" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <RadioButton x:Name="GenreSelectedM" Content="Genre" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4 0"/>
+                    <RadioButton x:Name="ScoreSelectedM" Content="Score" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4 0"/>
+                </StackPanel>
+            </Grid>
         </TabItem>
-        <TabItem Header="Add New">
-            <Grid Background="White"/>
+        <TabItem x:Name="AddNewItem" Header="Add New">
+            <Grid x:Name="newAorMGrid" Background="White" IsEnabled="True">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <RadioButton x:Name="AnimeSelected" Content="Anime" HorizontalAlignment="Left" Margin="16,11,0,0" VerticalAlignment="Top" IsChecked="True"/>
+                    <RadioButton x:Name="MangaSelected" Content="Manga" HorizontalAlignment="Left" Margin="39,11,0,0" VerticalAlignment="Top"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="26 36">
+                    <TextBox x:Name="nazwaTextBoxNew" HorizontalAlignment="Center" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="statusMy_TextBoxNew" HorizontalAlignment="Center" VerticalAlignment="Top" Width="120" Margin="0 4"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16 86">
+                    <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Command="{StaticResource AddCommand}" Style="{StaticResource NavigationButton}"/>
+                    <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="6 0" Width="75" Command="{StaticResource CancelAddingComand}" Style="{StaticResource NavigationButton}"/>
+                </StackPanel>
+            </Grid>
         </TabItem>
     </TabControl>
 </Window>
