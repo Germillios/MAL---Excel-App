@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MAL3"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded" ResizeMode="NoResize">
+        Title="MAL - Excel App 1.0" Height="450" Width="800" Loaded="Window_Loaded" ResizeMode="NoResize">
     <Window.Resources>
         <CollectionViewSource x:Key="animelist_1538511199_3585579ViewSource" d:DesignSource="{d:DesignInstance {x:Type local:animelist_1538511199_3585579}, CreateList=True}"/>
         <CollectionViewSource x:Key="anime_ilosc_ver2ViewSource" d:DesignSource="{d:DesignInstance {x:Type local:anime_ilosc_ver2}, CreateList=True}"/>
@@ -55,7 +55,7 @@
                             <Image Source="Pictures/Previous.png"/>
                         </StackPanel>
                     </Button>
-                    <TextBox x:Name="nazwaTextBox" HorizontalAlignment="Left" Height="23" Margin="3" Text="{Binding Nazwa, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+                    <TextBox x:Name="titleTextBox" HorizontalAlignment="Left" Height="23" Margin="3" Text="{Binding Title, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
                     <Button x:Name="btnNext" Command="{StaticResource NextCommand}" Style="{StaticResource NavigationButton}">
                         <StackPanel>
                             <Image Source="Pictures/Next.png"/>
@@ -68,14 +68,14 @@
                     </Button>
                 </StackPanel>
                 <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="53 52">
-                    <TextBox x:Name="status_MyTextBox" HorizontalAlignment="Left" Height="23" Margin="3,3,0,3" Text="{Binding Status_My, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+                    <TextBox x:Name="my_StatusTextBox" HorizontalAlignment="Left" Height="23" Margin="3,3,0,3" Text="{Binding My_status1, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
                     <TextBox x:Name="rodzajTextBox" HorizontalAlignment="Left" Height="23" Margin="3" Text="{Binding Rodzaj, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
                     <StackPanel Orientation="Horizontal">
                         <TextBox x:Name="progressTextBox" HorizontalAlignment="Left" Height="23" Margin="3" Text="{Binding Progress, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
                         <Label Content="/"/>
                         <TextBox x:Name="liczba_odcink_wTextBox" HorizontalAlignment="Left" Height="23" Margin="3" Text="{Binding Liczba_odcink_w, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
                     </StackPanel>
-                    <!--<Button x:Name="btnDeleteA" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="36 6" Command="{StaticResource DeleteCommand}" Style="{StaticResource NavigationButton}"/>-->
+                    <Button x:Name="btnDeleteA" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="36 6" Command="{StaticResource DeleteCommand}" Style="{StaticResource NavigationButton}"/>
                 </StackPanel>
             </Grid>
                 <!--<Separator HorizontalAlignment="Left" Height="100" Margin="6,73,0,0" VerticalAlignment="Top" Width="400"/>
@@ -100,9 +100,9 @@
                     </ListView.View>
                 </ListView>-->
         </TabItem>
-        <TabItem x:Name="MangaList" Header="MangaList">
+        <TabItem x:Name="MangaList" Header="Manga List">
             <Grid Background="White" DataContext="{StaticResource manga_iloscViewSource}">
-                <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Left">
+                <!--<StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Left">
                     <Button x:Name="btnUpdateM" Content="Update List" Command="{StaticResource UpdateCommand}" Style="{StaticResource NavigationButton}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="25,25,0,0">
@@ -136,7 +136,7 @@
                         <TextBox x:Name="liczba_rozdzia_wTextBox" HorizontalAlignment="Left" Height="23" Margin="3" Text="{Binding Liczba_rozdzia_w, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
                     </StackPanel>
                     <TextBox x:Name="rodzajTextBox1" HorizontalAlignment="Left" Height="23" Margin="3" Text="{Binding Rodzaj, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
-                </StackPanel>
+                </StackPanel>-->
                 <!--<Button x:Name="btnDeleteM" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="36 6" Command="{StaticResource DeleteCommand}" Style="{StaticResource NavigationButton}"/>
                 </StackPanel>
                 <Separator HorizontalAlignment="Left" Height="100" Margin="6,73,0,0" VerticalAlignment="Top" Width="400"/>
@@ -162,7 +162,7 @@
                 </ListView>-->
             </Grid>
         </TabItem>
-        <TabItem x:Name="AddNewItem" Header="Add New">
+        <TabItem x:Name="AddNewItem" Header="Add to List">
             <Grid x:Name="newAorMGrid" Background="White" IsEnabled="True">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
                     <RadioButton x:Name="AnimeSelected" Content="Anime" HorizontalAlignment="Left" Margin="16,11,0,0" VerticalAlignment="Top" IsChecked="True"/>

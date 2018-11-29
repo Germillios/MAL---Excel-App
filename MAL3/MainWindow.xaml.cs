@@ -71,8 +71,8 @@ namespace MAL3
                 {
                     anime_ilosc_ver2 new_anime_Ilosc_Ver2 = new anime_ilosc_ver2
                     {
-                        Nazwa = nazwaTextBoxNew.Text,
-                        Status_My = statusMy_TextBoxNew.Text
+                        //Nazwa = nazwaTextBoxNew.Text,
+                        //Status_My = statusMy_TextBoxNew.Text
                     };
                     int length = context.anime_ilosc_ver2.Local.Count();
                     int pos = length;
@@ -92,8 +92,8 @@ namespace MAL3
                 {
                     manga_ilosc new_manga_Ilosc = new manga_ilosc
                     {
-                        Nazwa = nazwaTextBoxNew.Text,
-                        Status_My = statusMy_TextBoxNew.Text
+                        //Nazwa = nazwaTextBoxNew.Text,
+                        //Status_My = statusMy_TextBoxNew.Text
                     };
                     int length = context.manga_ilosc.Local.Count();
                     int pos = length;

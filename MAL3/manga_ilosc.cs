@@ -15,14 +15,14 @@ namespace MAL3
     public partial class manga_ilosc
     {
         public int ID { get; set; }
-        public string Nazwa { get; set; }
-        public string Status_My { get; set; }
-        public Nullable<int> Chapters__progress { get; set; }
-        public Nullable<int> Liczba_rozdzia_w { get; set; }
-        public string Rodzaj { get; set; }
+        public string Title { get; set; }
         public Nullable<int> Score { get; set; }
-        public Nullable<int> Volumes__progress { get; set; }
+        public Nullable<int> Read_chapters { get; set; }
+        public Nullable<int> Chapters { get; set; }
+        public Nullable<int> Read_volumes { get; set; }
         public Nullable<int> Volumes { get; set; }
+        public string Type { get; set; }
+        public string My_status { get; set; }
         public string Genres { get; set; }
         public string Additional_information { get; set; }
     }

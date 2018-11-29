@@ -15,12 +15,12 @@ namespace MAL3
     public partial class anime_ilosc_ver2
     {
         public int ID { get; set; }
-        public string Nazwa { get; set; }
-        public string Status_My { get; set; }
-        public string Rodzaj { get; set; }
-        public Nullable<int> Progress { get; set; }
-        public Nullable<int> Liczba_odcink_w { get; set; }
+        public string Title { get; set; }
         public Nullable<int> Score { get; set; }
+        public Nullable<int> Watched_episodes { get; set; }
+        public Nullable<int> Episodes { get; set; }
+        public string Type { get; set; }
+        public string My_status1 { get; set; }
         public string Genres { get; set; }
         public string Additional_information { get; set; }
     }
