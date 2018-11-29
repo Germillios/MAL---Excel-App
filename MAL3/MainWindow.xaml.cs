@@ -179,8 +179,4 @@ namespace MAL3
             }
         }
     }
-    public class Anime
-    {
-        public string Name { get; set; }
-    }
 }

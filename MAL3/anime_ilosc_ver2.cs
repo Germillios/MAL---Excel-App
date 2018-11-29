@@ -20,10 +20,8 @@ namespace MAL3
         public string Rodzaj { get; set; }
         public Nullable<int> Progress { get; set; }
         public Nullable<int> Liczba_odcink_w { get; set; }
-        public string None { get; set; }
-        public Nullable<int> None3 { get; set; }
-        public Nullable<int> None4 { get; set; }
-        public Nullable<int> None5 { get; set; }
-        public Nullable<int> None6 { get; set; }
+        public Nullable<int> Score { get; set; }
+        public string Genres { get; set; }
+        public string Additional_information { get; set; }
     }
 }

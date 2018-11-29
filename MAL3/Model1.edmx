@@ -11,12 +11,10 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nazwa" Type="nvarchar" MaxLength="76" />
-          <Property Name="None" Type="nvarchar" MaxLength="4" />
+          <Property Name="Genres" Type="nvarchar" MaxLength="20" />
           <Property Name="Progress" Type="int" />
-          <Property Name="None3" Type="int" />
-          <Property Name="None4" Type="int" />
-          <Property Name="None5" Type="int" />
-          <Property Name="None6" Type="int" />
+          <Property Name="Score" Type="int" />
+          <Property Name="Additional information" Type="nvarchar" MaxLength="20" />
           <Property Name="Liczba_odcink_w" Type="int" />
           <Property Name="Rodzaj" Type="nvarchar" MaxLength="26" />
           <Property Name="Status_My" Type="nvarchar" MaxLength="15" />
@@ -65,14 +63,14 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nazwa" Type="nvarchar" MaxLength="73" />
           <Property Name="Chapters' progress" Type="int" />
-          <Property Name="None1" Type="int" />
-          <Property Name="None2" Type="int" />
-          <Property Name="None3" Type="int" />
-          <Property Name="None4" Type="int" />
-          <Property Name="None5" Type="int" />
+          <Property Name="Score" Type="int" />
+          <Property Name="Volumes' progress" Type="int" />
+          <Property Name="Volumes" Type="int" />
+          <Property Name="Genres" Type="nvarchar" MaxLength="20" />
           <Property Name="Liczba_rozdzia_w" Type="int" />
           <Property Name="Rodzaj" Type="nvarchar" MaxLength="8" />
           <Property Name="Status_My" Type="nvarchar" MaxLength="15" />
+          <Property Name="Additional information" Type="nvarchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="mangalist_1538511219_3585579">
           <Key>
@@ -129,11 +127,9 @@
           <Property Name="Rodzaj" Type="String" MaxLength="26" FixedLength="false" Unicode="true" />
           <Property Name="Progress" Type="Int32" />
           <Property Name="Liczba_odcink_w" Type="Int32" />
-          <Property Name="None" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
-          <Property Name="None3" Type="Int32" />
-          <Property Name="None4" Type="Int32" />
-          <Property Name="None5" Type="Int32" />
-          <Property Name="None6" Type="Int32" />
+          <Property Name="Score" Type="Int32" />
+          <Property Name="Genres" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Additional_information" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="animelist_1538511199_3585579">
           <Key>
@@ -188,11 +184,11 @@
           <Property Name="Chapters__progress" Type="Int32" />
           <Property Name="Liczba_rozdzia_w" Type="Int32" />
           <Property Name="Rodzaj" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
-          <Property Name="None1" Type="Int32" />
-          <Property Name="None2" Type="Int32" />
-          <Property Name="None3" Type="Int32" />
-          <Property Name="None4" Type="Int32" />
-          <Property Name="None5" Type="Int32" />
+          <Property Name="Score" Type="Int32" />
+          <Property Name="Volumes__progress" Type="Int32" />
+          <Property Name="Volumes" Type="Int32" />
+          <Property Name="Genres" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Additional_information" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="mangalist_1538511219_3585579">
           <Key>
@@ -238,14 +234,12 @@
           <EntitySetMapping Name="anime_ilosc_ver2">
             <EntityTypeMapping TypeName="MalAppDBModel.anime_ilosc_ver2">
               <MappingFragment StoreEntitySet="anime_ilosc_ver2">
+                <ScalarProperty Name="Additional_information" ColumnName="Additional information" />
+                <ScalarProperty Name="Genres" ColumnName="Genres" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
                 <ScalarProperty Name="Progress" ColumnName="Progress" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
-                <ScalarProperty Name="None" ColumnName="None" />
-                <ScalarProperty Name="None3" ColumnName="None3" />
-                <ScalarProperty Name="None4" ColumnName="None4" />
-                <ScalarProperty Name="None5" ColumnName="None5" />
-                <ScalarProperty Name="None6" ColumnName="None6" />
                 <ScalarProperty Name="Liczba_odcink_w" ColumnName="Liczba_odcink_w" />
                 <ScalarProperty Name="Rodzaj" ColumnName="Rodzaj" />
                 <ScalarProperty Name="Status_My" ColumnName="Status_My" />
@@ -293,15 +287,15 @@
           <EntitySetMapping Name="manga_ilosc">
             <EntityTypeMapping TypeName="MalAppDBModel.manga_ilosc">
               <MappingFragment StoreEntitySet="manga_ilosc">
+                <ScalarProperty Name="Additional_information" ColumnName="Additional information" />
+                <ScalarProperty Name="Genres" ColumnName="Genres" />
+                <ScalarProperty Name="Volumes" ColumnName="Volumes" />
+                <ScalarProperty Name="Volumes__progress" ColumnName="Volumes' progress" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
                 <ScalarProperty Name="Chapters__progress" ColumnName="Chapters' progress" />
                 <ScalarProperty Name="Status_My" ColumnName="Status_My" />
                 <ScalarProperty Name="Rodzaj" ColumnName="Rodzaj" />
                 <ScalarProperty Name="Liczba_rozdzia_w" ColumnName="Liczba_rozdzia_w" />
-                <ScalarProperty Name="None5" ColumnName="None5" />
-                <ScalarProperty Name="None4" ColumnName="None4" />
-                <ScalarProperty Name="None3" ColumnName="None3" />
-                <ScalarProperty Name="None2" ColumnName="None2" />
-                <ScalarProperty Name="None1" ColumnName="None1" />
                 <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
