@@ -20,7 +20,7 @@ namespace MAL3
         public Nullable<int> Watched_episodes { get; set; }
         public Nullable<int> Episodes { get; set; }
         public string Type { get; set; }
-        public string My_status1 { get; set; }
+        public string My_status { get; set; }
         public string Genres { get; set; }
         public string Additional_information { get; set; }
     }

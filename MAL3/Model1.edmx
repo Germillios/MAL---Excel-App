@@ -127,7 +127,7 @@
           <Property Name="Watched_episodes" Type="Int32" />
           <Property Name="Episodes" Type="Int32" />
           <Property Name="Type" Type="String" MaxLength="26" FixedLength="false" Unicode="true" />
-          <Property Name="My_status1" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="My_status" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="Genres" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Additional_information" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
         </EntityType>
@@ -234,7 +234,7 @@
           <EntitySetMapping Name="anime_ilosc_ver2">
             <EntityTypeMapping TypeName="MalAppDBModel.anime_ilosc_ver2">
               <MappingFragment StoreEntitySet="anime_ilosc_ver2">
-                <ScalarProperty Name="My_status1" ColumnName="My status" />
+                <ScalarProperty Name="My_status" ColumnName="My status" />
                 <ScalarProperty Name="Type" ColumnName="Type" />
                 <ScalarProperty Name="Episodes" ColumnName="Episodes" />
                 <ScalarProperty Name="Watched_episodes" ColumnName="Watched episodes" />
