@@ -191,10 +191,24 @@
                     <RadioButton x:Name="MangaSelected" Content="Manga" HorizontalAlignment="Left" Margin="39,11,0,0" VerticalAlignment="Top"/>
                 </StackPanel>
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="26 36">
-                    <TextBox x:Name="nazwaTextBoxNew" HorizontalAlignment="Center" VerticalAlignment="Top" Width="120"/>
-                    <TextBox x:Name="statusMy_TextBoxNew" HorizontalAlignment="Center" VerticalAlignment="Top" Width="120" Margin="0 4"/>
+                    <TextBox x:Name="titleTextBoxNew" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="3"/>
+                    <TextBox x:Name="scoreTextBoxNew" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="3"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox x:Name="watched_episodes_or_read_chaptersTextBoxNew" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="3"/>
+                        <Label Content="/"/>
+                        <TextBox x:Name="episodes_or_chaptersTextBoxNew" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="3"/>
+                    </StackPanel>
+                    <StackPanel x:Name="volumesTextBoxesPanel" Orientation="Horizontal" IsEnabled="{Binding IsChecked, ElementName=MangaSelected}">
+                        <TextBox x:Name="read_volumesTextBoxNew" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="3"/>
+                        <Label Content="/"/>
+                        <TextBox x:Name="volumesTextBoxNew" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="3"/>
+                    </StackPanel>
+                    <TextBox x:Name="typeTextBoxNew" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="3"/>
+                    <TextBox x:Name="my_statusTextBoxNew" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="3"/>
+                    <TextBox x:Name="genresTextBoxNew" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="3"/>
+                    <TextBox x:Name="additional_informationTextBoxNew" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="3"/>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16 86">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16,236,0,0">
                     <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Command="{StaticResource AddCommand}" Style="{StaticResource NavigationButton}"/>
                     <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="6 0" Width="75" Command="{StaticResource CancelAddingComand}" Style="{StaticResource NavigationButton}"/>
                 </StackPanel>

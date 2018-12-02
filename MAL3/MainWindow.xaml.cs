@@ -138,13 +138,15 @@ namespace MAL3
         {
             if (AnimeSelected.IsChecked == true)
             {
-                nazwaTextBoxNew.Text = "";
-                statusMy_TextBoxNew.Text = "";
+                volumesTextBoxesPanel.IsEnabled = false;
+                //nazwaTextBoxNew.Text = "";
+                //statusMy_TextBoxNew.Text = "";
             }
             if (MangaSelected.IsChecked == true)
             {
-                nazwaTextBoxNew.Text = "";
-                statusMy_TextBoxNew.Text = "";
+                volumesTextBoxesPanel.IsEnabled = true;
+                //nazwaTextBoxNew.Text = "";
+                //statusMy_TextBoxNew.Text = "";
             }
         }
         private void DeleteCommandHandler(object sender, ExecutedRoutedEventArgs e)
