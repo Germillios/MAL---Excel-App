@@ -45,7 +45,7 @@ namespace MAL3
             anime_ilosc_ver2ViewSource.Source = context.anime_ilosc_ver2.Local;
             animelist_1538511199_3585579ViewSource.Source = context.animelist_1538511199_3585579.Local;
             manga_iloscViewSource.Source = context.manga_ilosc.Local;
-            mangalist_1538511219_3585579ViewSource.Source = context.mangalist_1538511219_3585579.Local;           
+            mangalist_1538511219_3585579ViewSource.Source = context.mangalist_1538511219_3585579.Local;
         }
         private void FirstCommandHandler(object sender, ExecutedRoutedEventArgs e)
         {
@@ -71,8 +71,14 @@ namespace MAL3
                 {
                     anime_ilosc_ver2 new_anime_Ilosc_Ver2 = new anime_ilosc_ver2
                     {
-                        //Nazwa = nazwaTextBoxNew.Text,
-                        //Status_My = statusMy_TextBoxNew.Text
+                        Title = titleTextBoxNew.Text,
+                        Score = int.Parse(scoreTextBoxNew.Text),
+                        Watched_episodes = int.Parse(watched_episodes_or_read_chaptersTextBoxNew.Text),
+                        Episodes = int.Parse(episodes_or_chaptersTextBoxNew.Text),
+                        Type = typeTextBoxNew.Text,
+                        My_status = my_statusTextBoxNew.Text,
+                        Genres = genresTextBoxNew.Text,
+                        Additional_information = additional_informationTextBoxNew.Text
                     };
                     int length = context.anime_ilosc_ver2.Local.Count();
                     int pos = length;
@@ -92,8 +98,16 @@ namespace MAL3
                 {
                     manga_ilosc new_manga_Ilosc = new manga_ilosc
                     {
-                        //Nazwa = nazwaTextBoxNew.Text,
-                        //Status_My = statusMy_TextBoxNew.Text
+                        Title = titleTextBoxNew.Text,
+                        Score = int.Parse(scoreTextBoxNew.Text),
+                        Read_chapters = int.Parse(watched_episodes_or_read_chaptersTextBoxNew.Text),
+                        Chapters = int.Parse(episodes_or_chaptersTextBoxNew.Text),
+                        Read_volumes = int.Parse(read_volumesTextBoxNew.Text),
+                        Volumes = int.Parse(volumesTextBoxNew.Text),
+                        Type = typeTextBoxNew.Text,
+                        My_status = my_statusTextBoxNew.Text,
+                        Genres = genresTextBoxNew.Text,
+                        Additional_information = additional_informationTextBoxNew.Text
                     };
                     int length = context.manga_ilosc.Local.Count();
                     int pos = length;
@@ -115,39 +129,45 @@ namespace MAL3
         }
         private void AddCommandHandler(object sender, ExecutedRoutedEventArgs e)
         {
-            if (AnimeSelected.IsChecked == true)
-            {
-                foreach (var child in newAorMGrid.Children)
-                {
-                    var textBoxes = child as TextBox;
-                    if (textBoxes != null)
-                        textBoxes.Text = "";
-                }
-            }
-            if (MangaSelected.IsChecked == true)
-            {
-                foreach (var child in newAorMGrid.Children)
-                {
-                    var textBoxes = child as TextBox;
-                    if (textBoxes != null)
-                        textBoxes.Text = "";
-                }
-            }
+            titleTextBoxNew.Text = "";
+            scoreTextBoxNew.Text = "";
+            watched_episodes_or_read_chaptersTextBoxNew.Text = "";
+            episodes_or_chaptersTextBoxNew.Text = "";
+            read_volumesTextBoxNew.Text = "";
+            volumesTextBoxNew.Text = "";
+            typeTextBoxNew.Text = "";
+            my_statusTextBoxNew.Text = "";
+            genresTextBoxNew.Text = "";
+            additional_informationTextBoxNew.Text = "";
         }
         private void CancelCommandHandler(object sender, ExecutedRoutedEventArgs e)
         {
-            if (AnimeSelected.IsChecked == true)
-            {
-                volumesTextBoxesPanel.IsEnabled = false;
-                //nazwaTextBoxNew.Text = "";
-                //statusMy_TextBoxNew.Text = "";
-            }
-            if (MangaSelected.IsChecked == true)
-            {
-                volumesTextBoxesPanel.IsEnabled = true;
-                //nazwaTextBoxNew.Text = "";
-                //statusMy_TextBoxNew.Text = "";
-            }
+            titleTextBoxNew.Text = "";
+            scoreTextBoxNew.Text = "";
+            watched_episodes_or_read_chaptersTextBoxNew.Text = "";
+            episodes_or_chaptersTextBoxNew.Text = "";
+            read_volumesTextBoxNew.Text = "";
+            volumesTextBoxNew.Text = "";
+            typeTextBoxNew.Text = "";
+            my_statusTextBoxNew.Text = "";
+            genresTextBoxNew.Text = "";
+            additional_informationTextBoxNew.Text = "";
+            //titleTextBoxNew.Text = "";
+            //watched_episodes_or_read_chaptersTextBoxNew.Text = "";
+            //foreach (UIElement element in newAorMGrid.Children)
+            //{
+            //    if (element.GetType() == typeof(TextBox))
+            //    {
+            //        TextBox textBoxes = (TextBox)element;
+            //        textBoxes.Text = null;
+            //    }
+            //}
+            //foreach (var child in newAorMGrid.Children)
+            //{
+            //    //var textBoxes = child as TextBox;
+            //    //if (textBoxes != null)
+            //    //    textBoxes.Text = String.Empty;
+            //}
         }
         private void DeleteCommandHandler(object sender, ExecutedRoutedEventArgs e)
         {
