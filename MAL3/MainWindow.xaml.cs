@@ -65,70 +65,69 @@ namespace MAL3
         }
         private void UpdateCommandHandler(object sender, ExecutedRoutedEventArgs e)
         {
-            if (newAorMGrid.IsEnabled)
-            {
-                if (AnimeSelected.IsChecked == true)
-                {
-                    anime_ilosc_ver2 new_anime_Ilosc_Ver2 = new anime_ilosc_ver2
-                    {
-                        Title = titleTextBoxNew.Text,
-                        Score = int.Parse(scoreTextBoxNew.Text),
-                        Watched_episodes = int.Parse(watched_episodes_or_read_chaptersTextBoxNew.Text),
-                        Episodes = int.Parse(episodes_or_chaptersTextBoxNew.Text),
-                        Type = typeTextBoxNew.Text,
-                        My_status = my_statusTextBoxNew.Text,
-                        Genres = genresTextBoxNew.Text,
-                        Additional_information = additional_informationTextBoxNew.Text
-                    };
-                    int length = context.anime_ilosc_ver2.Local.Count();
-                    int pos = length;
-                    for (int i = 0; i < length; i++)
-                    {
-                        if (String.CompareOrdinal(new_anime_Ilosc_Ver2.ID.ToString(), context.anime_ilosc_ver2.Local[i].ID.ToString()) < 0)
-                        {
-                            pos = i;
-                            break;
-                        }
-                    }
-                    context.anime_ilosc_ver2.Local.Insert(pos, new_anime_Ilosc_Ver2);
-                    anime_ilosc_ver2ViewSource.View.Refresh();
-                    anime_ilosc_ver2ViewSource.View.MoveCurrentTo(new_anime_Ilosc_Ver2);
-                }
-                if (MangaSelected.IsChecked == true)
-                {
-                    manga_ilosc new_manga_Ilosc = new manga_ilosc
-                    {
-                        Title = titleTextBoxNew.Text,
-                        Score = int.Parse(scoreTextBoxNew.Text),
-                        Read_chapters = int.Parse(watched_episodes_or_read_chaptersTextBoxNew.Text),
-                        Chapters = int.Parse(episodes_or_chaptersTextBoxNew.Text),
-                        Read_volumes = int.Parse(read_volumesTextBoxNew.Text),
-                        Volumes = int.Parse(volumesTextBoxNew.Text),
-                        Type = typeTextBoxNew.Text,
-                        My_status = my_statusTextBoxNew.Text,
-                        Genres = genresTextBoxNew.Text,
-                        Additional_information = additional_informationTextBoxNew.Text
-                    };
-                    int length = context.manga_ilosc.Local.Count();
-                    int pos = length;
-                    for (int i = 0; i < length; i++)
-                    {
-                        if (String.CompareOrdinal(new_manga_Ilosc.ID.ToString(), context.manga_ilosc.Local[i].ID.ToString()) < 0)
-                        {
-                            pos = i;
-                            break;
-                        }
-                    }
-                    context.manga_ilosc.Local.Insert(pos, new_manga_Ilosc);
-                    manga_iloscViewSource.View.Refresh();
-                    manga_iloscViewSource.View.MoveCurrentTo(new_manga_Ilosc);
-                }
-            }
             context.SaveChanges();
             selectedViewSource.View.Refresh();
         }
         private void AddCommandHandler(object sender, ExecutedRoutedEventArgs e)
         {
+            if (AnimeSelected.IsChecked == true)
+            {
+                anime_ilosc_ver2 new_anime_Ilosc_Ver2 = new anime_ilosc_ver2
+                {
+                    Title = titleTextBoxNew.Text,
+                    Score = int.Parse(scoreTextBoxNew.Text),
+                    Watched_episodes = int.Parse(watched_episodes_or_read_chaptersTextBoxNew.Text),
+                    Episodes = int.Parse(episodes_or_chaptersTextBoxNew.Text),
+                    Type = typeTextBoxNew.Text,
+                    My_status = my_statusTextBoxNew.Text,
+                    Genres = genresTextBoxNew.Text,
+                    Additional_information = additional_informationTextBoxNew.Text
+                };
+                int length = context.anime_ilosc_ver2.Local.Count();
+                int pos = length;
+                for (int i = 0; i < length; i++)
+                {
+                    if (String.CompareOrdinal(new_anime_Ilosc_Ver2.ID.ToString(), context.anime_ilosc_ver2.Local[i].ID.ToString()) < 0)
+                    {
+                        pos = i;
+                        break;
+                    }
+                }
+                context.anime_ilosc_ver2.Local.Insert(pos, new_anime_Ilosc_Ver2);
+                AppTabControl.SelectedItem = AnimeList;
+                anime_ilosc_ver2ViewSource.View.Refresh();
+                anime_ilosc_ver2ViewSource.View.MoveCurrentTo(new_anime_Ilosc_Ver2);
+            }
+            if (MangaSelected.IsChecked == true)
+            {
+                manga_ilosc new_manga_Ilosc = new manga_ilosc
+                {
+                    Title = titleTextBoxNew.Text,
+                    Score = int.Parse(scoreTextBoxNew.Text),
+                    Read_chapters = int.Parse(watched_episodes_or_read_chaptersTextBoxNew.Text),
+                    Chapters = int.Parse(episodes_or_chaptersTextBoxNew.Text),
+                    Read_volumes = int.Parse(read_volumesTextBoxNew.Text),
+                    Volumes = int.Parse(volumesTextBoxNew.Text),
+                    Type = typeTextBoxNew.Text,
+                    My_status = my_statusTextBoxNew.Text,
+                    Genres = genresTextBoxNew.Text,
+                    Additional_information = additional_informationTextBoxNew.Text
+                };
+                int length = context.manga_ilosc.Local.Count();
+                int pos = length;
+                for (int i = 0; i < length; i++)
+                {
+                    if (String.CompareOrdinal(new_manga_Ilosc.ID.ToString(), context.manga_ilosc.Local[i].ID.ToString()) < 0)
+                    {
+                        pos = i;
+                        break;
+                    }
+                }
+                context.manga_ilosc.Local.Insert(pos, new_manga_Ilosc);
+                AppTabControl.SelectedItem = MangaList;
+                manga_iloscViewSource.View.Refresh();
+                manga_iloscViewSource.View.MoveCurrentTo(new_manga_Ilosc);
+            }
             titleTextBoxNew.Text = "";
             scoreTextBoxNew.Text = "";
             watched_episodes_or_read_chaptersTextBoxNew.Text = "";
@@ -152,8 +151,6 @@ namespace MAL3
             my_statusTextBoxNew.Text = "";
             genresTextBoxNew.Text = "";
             additional_informationTextBoxNew.Text = "";
-            //titleTextBoxNew.Text = "";
-            //watched_episodes_or_read_chaptersTextBoxNew.Text = "";
             //foreach (UIElement element in newAorMGrid.Children)
             //{
             //    if (element.GetType() == typeof(TextBox))

@@ -10,7 +10,7 @@
 namespace MAL3
 {
     using System;
-    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     
     public partial class anime_ilosc_ver2
     {
