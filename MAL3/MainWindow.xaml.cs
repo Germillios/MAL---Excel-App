@@ -85,14 +85,6 @@ namespace MAL3
                 };
                 int length = context.anime_ilosc_ver2.Local.Count();
                 int pos = length;
-                for (int i = 0; i < length; i++)
-                {
-                    if (String.CompareOrdinal(new_anime_Ilosc_Ver2.ID.ToString(), context.anime_ilosc_ver2.Local[i].ID.ToString()) < 0)
-                    {
-                        pos = i;
-                        break;
-                    }
-                }
                 context.anime_ilosc_ver2.Local.Insert(pos, new_anime_Ilosc_Ver2);
                 context.SaveChanges();
                 AppTabControl.SelectedItem = AnimeList;
@@ -116,14 +108,6 @@ namespace MAL3
                 };
                 int length = context.manga_ilosc.Local.Count();
                 int pos = length;
-                for (int i = 0; i < length; i++)
-                {
-                    if (String.CompareOrdinal(new_manga_Ilosc.ID.ToString(), context.manga_ilosc.Local[i].ID.ToString()) < 0)
-                    {
-                        pos = i;
-                        break;
-                    }
-                }
                 context.manga_ilosc.Local.Insert(pos, new_manga_Ilosc);
                 context.SaveChanges();
                 AppTabControl.SelectedItem = MangaList;
@@ -177,12 +161,6 @@ namespace MAL3
                     }
                 }
             }
-            //foreach (var child in newAorMGrid.Children)
-            //{
-            //    //var textBoxes = child as TextBox;
-            //    //if (textBoxes != null)
-            //    //    textBoxes.Text = String.Empty;
-            //}
         }
         private void DeleteCommandHandler(object sender, ExecutedRoutedEventArgs e)
         {
