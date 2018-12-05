@@ -94,6 +94,7 @@ namespace MAL3
                     }
                 }
                 context.anime_ilosc_ver2.Local.Insert(pos, new_anime_Ilosc_Ver2);
+                context.SaveChanges();
                 AppTabControl.SelectedItem = AnimeList;
                 anime_ilosc_ver2ViewSource.View.Refresh();
                 anime_ilosc_ver2ViewSource.View.MoveCurrentTo(new_anime_Ilosc_Ver2);
@@ -124,41 +125,58 @@ namespace MAL3
                     }
                 }
                 context.manga_ilosc.Local.Insert(pos, new_manga_Ilosc);
+                context.SaveChanges();
                 AppTabControl.SelectedItem = MangaList;
                 manga_iloscViewSource.View.Refresh();
                 manga_iloscViewSource.View.MoveCurrentTo(new_manga_Ilosc);
             }
-            titleTextBoxNew.Text = "";
-            scoreTextBoxNew.Text = "";
-            watched_episodes_or_read_chaptersTextBoxNew.Text = "";
-            episodes_or_chaptersTextBoxNew.Text = "";
-            read_volumesTextBoxNew.Text = "";
-            volumesTextBoxNew.Text = "";
-            typeTextBoxNew.Text = "";
-            my_statusTextBoxNew.Text = "";
-            genresTextBoxNew.Text = "";
-            additional_informationTextBoxNew.Text = "";
+            foreach (UIElement element in newItemTextBoxesPanel.Children)
+            {
+                if (element.GetType() == typeof(TextBox))
+                {
+                    TextBox textBoxes = (TextBox)element;
+                    if (textBoxes != null)
+                        textBoxes.Text = String.Empty;
+                }
+                if (element.GetType() == typeof(StackPanel))
+                {
+                    StackPanel stackPanel = element as StackPanel;
+                    foreach (UIElement elementSP in stackPanel.Children)
+                    {
+                        if (elementSP.GetType() == typeof(TextBox))
+                        {
+                            TextBox textBoxesInSP = (TextBox)elementSP;
+                            if (textBoxesInSP != null)
+                                textBoxesInSP.Text = String.Empty;
+                        }
+                    }
+                }
+            }
         }
         private void CancelCommandHandler(object sender, ExecutedRoutedEventArgs e)
         {
-            titleTextBoxNew.Text = "";
-            scoreTextBoxNew.Text = "";
-            watched_episodes_or_read_chaptersTextBoxNew.Text = "";
-            episodes_or_chaptersTextBoxNew.Text = "";
-            read_volumesTextBoxNew.Text = "";
-            volumesTextBoxNew.Text = "";
-            typeTextBoxNew.Text = "";
-            my_statusTextBoxNew.Text = "";
-            genresTextBoxNew.Text = "";
-            additional_informationTextBoxNew.Text = "";
-            //foreach (UIElement element in newAorMGrid.Children)
-            //{
-            //    if (element.GetType() == typeof(TextBox))
-            //    {
-            //        TextBox textBoxes = (TextBox)element;
-            //        textBoxes.Text = null;
-            //    }
-            //}
+            foreach (UIElement element in newItemTextBoxesPanel.Children)
+            {
+                if (element.GetType() == typeof(TextBox))
+                {
+                    TextBox textBoxes = (TextBox)element;
+                    if (textBoxes != null)
+                        textBoxes.Text = String.Empty;
+                }
+                if (element.GetType() == typeof(StackPanel))
+                {
+                    StackPanel stackPanel = element as StackPanel;
+                    foreach (UIElement elementSP in stackPanel.Children)
+                    {
+                        if (elementSP.GetType() == typeof(TextBox))
+                        {
+                            TextBox textBoxesInSP = (TextBox)elementSP;
+                            if (textBoxesInSP != null)
+                                textBoxesInSP.Text = String.Empty;
+                        }
+                    }
+                }
+            }
             //foreach (var child in newAorMGrid.Children)
             //{
             //    //var textBoxes = child as TextBox;

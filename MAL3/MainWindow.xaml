@@ -190,7 +190,7 @@
                     <RadioButton x:Name="AnimeSelected" Content="Anime" HorizontalAlignment="Left" Margin="16,11,0,0" VerticalAlignment="Top" IsChecked="True"/>
                     <RadioButton x:Name="MangaSelected" Content="Manga" HorizontalAlignment="Left" Margin="39,11,0,0" VerticalAlignment="Top"/>
                 </StackPanel>
-                <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="26 36">
+                <StackPanel x:Name="newItemTextBoxesPanel" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="26 36">
                     <TextBox x:Name="titleTextBoxNew" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="3"/>
                     <TextBox x:Name="scoreTextBoxNew" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="3"/>
                     <StackPanel Orientation="Horizontal">
@@ -198,7 +198,7 @@
                         <Label Content="/"/>
                         <TextBox x:Name="episodes_or_chaptersTextBoxNew" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="3"/>
                     </StackPanel>
-                    <StackPanel x:Name="volumesTextBoxesPanel" Orientation="Horizontal" IsEnabled="{Binding IsChecked, ElementName=MangaSelected}">
+                    <StackPanel Orientation="Horizontal" IsEnabled="{Binding IsChecked, ElementName=MangaSelected}">
                         <TextBox x:Name="read_volumesTextBoxNew" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="3"/>
                         <Label Content="/"/>
                         <TextBox x:Name="volumesTextBoxNew" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="3"/>
