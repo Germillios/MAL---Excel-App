@@ -54,10 +54,20 @@ namespace MAL3
         private void PreviousCommandHandler(object sender, ExecutedRoutedEventArgs e)
         {
             selectedViewSource.View.MoveCurrentToPrevious();
+            if (selectedViewSource.View.IsCurrentBeforeFirst)
+            {
+                selectedViewSource.View.MoveCurrentToFirst();
+                MessageBox.Show("First position in the list is reached.");
+            }            
         }
         private void NextCommandHandler(object sender, ExecutedRoutedEventArgs e)
         {
             selectedViewSource.View.MoveCurrentToNext();
+            if (selectedViewSource.View.IsCurrentAfterLast)
+            {
+                selectedViewSource.View.MoveCurrentToLast();
+                MessageBox.Show("Last position in the list is reached.");
+            }
         }
         private void LastCommandHandler(object sender, ExecutedRoutedEventArgs e)
         {
