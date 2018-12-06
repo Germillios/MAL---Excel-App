@@ -187,10 +187,10 @@
                         <GridView>
                             <GridViewColumn Header="Title" Width="40" DisplayMemberBinding="{Binding Title}"/>
                             <GridViewColumn Header="Score" Width="40" DisplayMemberBinding="{Binding Score}"/>
-                            <GridViewColumn Header="Watched episodes" Width="40" DisplayMemberBinding="{Binding Read_chapters}"/>
-                            <GridViewColumn Header="Episodes" Width="40" DisplayMemberBinding="{Binding Chapters}"/>
-                            <GridViewColumn Header="Watched episodes" Width="40" DisplayMemberBinding="{Binding Read_volumes}"/>
-                            <GridViewColumn Header="Episodes" Width="40" DisplayMemberBinding="{Binding Volumes}"/>
+                            <GridViewColumn Header="Read_chapters" Width="40" DisplayMemberBinding="{Binding Read_chapters}"/>
+                            <GridViewColumn Header="Chapters" Width="40" DisplayMemberBinding="{Binding Chapters}"/>
+                            <GridViewColumn Header="Read_volumes" Width="40" DisplayMemberBinding="{Binding Read_volumes}"/>
+                            <GridViewColumn Header="Volumes" Width="40" DisplayMemberBinding="{Binding Volumes}"/>
                             <GridViewColumn Header="Type" Width="40" DisplayMemberBinding="{Binding Type}"/>
                             <GridViewColumn Header="My_status" Width="40" DisplayMemberBinding="{Binding My_status}"/>
                             <GridViewColumn Header="Genres" Width="40" DisplayMemberBinding="{Binding Genres}"/>
