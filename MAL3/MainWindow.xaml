@@ -103,7 +103,14 @@
                 <ListView x:Name="SearchResultsA" HorizontalAlignment="Left" VerticalAlignment="Top" Width="329" Margin="434,75,0,0" Height="182">
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Header="Name" Width="120" DisplayMemberBinding="{Binding Nazwa}"/>
+                            <GridViewColumn Header="Title" Width="40" DisplayMemberBinding="{Binding Title}"/>
+                            <GridViewColumn Header="Score" Width="40" DisplayMemberBinding="{Binding Score}"/>
+                            <GridViewColumn Header="Watched episodes" Width="40" DisplayMemberBinding="{Binding Watched_episodes}"/>
+                            <GridViewColumn Header="Episodes" Width="40" DisplayMemberBinding="{Binding Episodes}"/>
+                            <GridViewColumn Header="Type" Width="40" DisplayMemberBinding="{Binding Type}"/>
+                            <GridViewColumn Header="My_status" Width="40" DisplayMemberBinding="{Binding My_status}"/>
+                            <GridViewColumn Header="Genres" Width="40" DisplayMemberBinding="{Binding Genres}"/>
+                            <GridViewColumn Header="Additional information" Width="40" DisplayMemberBinding="{Binding Additional_information}"/>
                         </GridView>
                     </ListView.View>
                 </ListView>
@@ -178,7 +185,16 @@
                 <ListView x:Name="SearchResultsM" HorizontalAlignment="Left" VerticalAlignment="Top" Width="329" Margin="434,75,0,0" Height="182">
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Header="Name" Width="120" DisplayMemberBinding="{Binding Nazwa}"/>
+                            <GridViewColumn Header="Title" Width="40" DisplayMemberBinding="{Binding Title}"/>
+                            <GridViewColumn Header="Score" Width="40" DisplayMemberBinding="{Binding Score}"/>
+                            <GridViewColumn Header="Watched episodes" Width="40" DisplayMemberBinding="{Binding Read_chapters}"/>
+                            <GridViewColumn Header="Episodes" Width="40" DisplayMemberBinding="{Binding Chapters}"/>
+                            <GridViewColumn Header="Watched episodes" Width="40" DisplayMemberBinding="{Binding Read_volumes}"/>
+                            <GridViewColumn Header="Episodes" Width="40" DisplayMemberBinding="{Binding Volumes}"/>
+                            <GridViewColumn Header="Type" Width="40" DisplayMemberBinding="{Binding Type}"/>
+                            <GridViewColumn Header="My_status" Width="40" DisplayMemberBinding="{Binding My_status}"/>
+                            <GridViewColumn Header="Genres" Width="40" DisplayMemberBinding="{Binding Genres}"/>
+                            <GridViewColumn Header="Additional information" Width="40" DisplayMemberBinding="{Binding Additional_information}"/>
                         </GridView>
                     </ListView.View>
                 </ListView>
