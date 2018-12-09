@@ -19,6 +19,7 @@
         <RoutedUICommand x:Key="AddCommand" Text="Add"/>
         <RoutedUICommand x:Key="CancelAddingComand" Text="Cancel"/>
         <RoutedUICommand x:Key="DeleteCommand" Text="Delete"/>
+        <RoutedUICommand x:Key="UpdateFromMALCommand" Text="Update from MAL"/>
         <Style x:Key="NavigationButton" TargetType="{x:Type Button}" BasedOn="{x:Null}">
             <Setter Property="FontFamily" Value="Arial"/>
             <Setter Property="FontSize" Value="15"/>
@@ -37,6 +38,7 @@
         <CommandBinding Command="{StaticResource AddCommand}" Executed="AddCommandHandler"/>
         <CommandBinding Command="{StaticResource CancelAddingComand}" Executed="CancelCommandHandler"/>
         <CommandBinding Command="{StaticResource DeleteCommand}" Executed="DeleteCommandHandler"/>
+        <CommandBinding Command="{StaticResource UpdateFromMALCommand}" Executed="UpdateFromMALCommandHandler"/>
     </Window.CommandBindings>
     <TabControl x:Name="AppTabControl" HorizontalAlignment="Left" VerticalAlignment="Top" Width="795" Height="420" SelectionChanged="TabControl_SelectionChanged">
         <TabItem x:Name="AnimeList" Header="Anime List">
@@ -79,6 +81,7 @@
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="38,232,0,0">
                     <Button x:Name="btnUpdateA" Content="Update List" Command="{StaticResource UpdateCommand}" Style="{StaticResource NavigationButton}"/>
                     <Button x:Name="btnDeleteA" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="36 6" Command="{StaticResource DeleteCommand}" Style="{StaticResource NavigationButton}"/>
+                    <Button x:Name="btnUpdateFromMalA" Content="Update from MAL" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0 6" Command="{StaticResource UpdateFromMALCommand}" Style="{StaticResource NavigationButton}"/>
                 </StackPanel>
                 <Separator HorizontalAlignment="Left" Height="10" Margin="225,200,0,0" VerticalAlignment="Top" Width="400" RenderTransformOrigin="0.5,0.5">
                     <Separator.RenderTransform>

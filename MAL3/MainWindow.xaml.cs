@@ -193,6 +193,41 @@ namespace MAL3
                 manga_iloscViewSource.View.Refresh();
             }
         }
+        private void UpdateFromMALCommandHandler(object sender, ExecutedRoutedEventArgs e)
+        {
+            if (selectedViewSource == anime_ilosc_ver2ViewSource)
+            {
+                var query1 = "UPDATE dbo.anime_ilosc_ver2 SET Score = c.myanimelist_anime_my_score FROM dbo.anime_ilosc_ver2 o, dbo.animelist_1538511199_3585579 c WHERE o.Title = c.myanimelist_anime_series_title";
+                var query2 = "UPDATE dbo.anime_ilosc_ver2 SET[Watched episodes] = c.myanimelist_anime_my_watched_episodes FROM dbo.anime_ilosc_ver2 o, dbo.animelist_1538511199_3585579 c WHERE o.Title = c.myanimelist_anime_series_title";
+                var query3 = "UPDATE dbo.anime_ilosc_ver2 SET Episodes = c.myanimelist_anime_series_episodes FROM dbo.anime_ilosc_ver2 o, dbo.animelist_1538511199_3585579 c WHERE o.Title = c.myanimelist_anime_series_title";
+                var query4 = "UPDATE dbo.anime_ilosc_ver2 SET Type = c.myanimelist_anime_series_type FROM dbo.anime_ilosc_ver2 o, dbo.animelist_1538511199_3585579 c WHERE o.Title = c.myanimelist_anime_series_title";
+                var query5 = "UPDATE dbo.anime_ilosc_ver2 SET[My status] = c.myanimelist_anime_my_status FROM dbo.anime_ilosc_ver2 o, dbo.animelist_1538511199_3585579 c WHERE o.Title = c.myanimelist_anime_series_title";
+                context.Database.ExecuteSqlCommand(query1);
+                context.Database.ExecuteSqlCommand(query2);
+                context.Database.ExecuteSqlCommand(query3);
+                context.Database.ExecuteSqlCommand(query4);
+                context.Database.ExecuteSqlCommand(query5);
+                context.SaveChanges();
+                anime_ilosc_ver2ViewSource.View.Refresh();
+            }
+            if (selectedViewSource == manga_iloscViewSource)
+            {
+                var query1 = "UPDATE dbo.manga_ilosc SET Score = c.myanimelist_manga_my_score FROM dbo.manga_ilosc o, dbo.mangalist_1538511219_3585579 c WHERE o.Title = c.myanimelist_manga_manga_title";
+                var query2 = "UPDATE dbo.manga_ilosc SET[Read chapters] = c.myanimelist_manga_my_read_chapters FROM dbo.manga_ilosc o, dbo.mangalist_1538511219_3585579 c WHERE o.Title = c.myanimelist_manga_manga_title";
+                var query3 = "UPDATE dbo.manga_ilosc SET Chapters = c.myanimelist_manga_manga_chapters FROM dbo.manga_ilosc o, dbo.mangalist_1538511219_3585579 c WHERE o.Title = c.myanimelist_manga_manga_title";
+                var query4 = "UPDATE dbo.manga_ilosc SET[Read volumes] = c.myanimelist_manga_my_read_volumes FROM dbo.manga_ilosc o, dbo.mangalist_1538511219_3585579 c WHERE o.Title = c.myanimelist_manga_manga_title";
+                var query5 = "UPDATE dbo.manga_ilosc SET Volumes = c.myanimelist_manga_manga_volumes FROM dbo.manga_ilosc o, dbo.mangalist_1538511219_3585579 c WHERE o.Title = c.myanimelist_manga_manga_title";
+                var query6 = "UPDATE dbo.manga_ilosc SET[My status] = c.myanimelist_manga_my_status FROM dbo.manga_ilosc o, dbo.mangalist_1538511219_3585579 c WHERE o.Title = c.myanimelist_manga_manga_title";
+                context.Database.ExecuteSqlCommand(query1);
+                context.Database.ExecuteSqlCommand(query2);
+                context.Database.ExecuteSqlCommand(query3);
+                context.Database.ExecuteSqlCommand(query4);
+                context.Database.ExecuteSqlCommand(query5);
+                context.Database.ExecuteSqlCommand(query6);
+                context.SaveChanges();
+                manga_iloscViewSource.View.Refresh();
+            }
+        }
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (e.Source is TabControl)
