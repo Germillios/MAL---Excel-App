@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,9 +29,6 @@ namespace MAL3
         public MainWindow()
         {
             InitializeComponent();
-            //List<anime_ilosc_ver2> items = new List<anime_ilosc_ver2>();
-            //items.Add(new anime_ilosc_ver2 { Nazwa = "Anime 20" });
-            //SearchResultsA.ItemsSource = items;
             anime_ilosc_ver2ViewSource = (CollectionViewSource)FindResource("anime_ilosc_ver2ViewSource");
             animelist_1538511199_3585579ViewSource = (CollectionViewSource)FindResource("animelist_1538511199_3585579ViewSource");
             manga_iloscViewSource = (CollectionViewSource)FindResource("manga_iloscViewSource");
@@ -58,7 +57,7 @@ namespace MAL3
             {
                 selectedViewSource.View.MoveCurrentToFirst();
                 MessageBox.Show("First position in the list is reached.");
-            }            
+            }
         }
         private void NextCommandHandler(object sender, ExecutedRoutedEventArgs e)
         {
@@ -226,6 +225,113 @@ namespace MAL3
                 context.Database.ExecuteSqlCommand(query6);
                 context.SaveChanges();
                 manga_iloscViewSource.View.Refresh();
+            }
+        }
+        private void SearchDatabaseCommandHandler(object sender, ExecutedRoutedEventArgs e)
+        {
+            if (selectedViewSource == anime_ilosc_ver2ViewSource)
+            {
+                if (StatusSelectedA.IsChecked == true)
+                {
+                    var items = context.anime_ilosc_ver2.Where(x => x.My_status == searchTextBoxA.Text).Select(x => new
+                    {
+                        x.Title,
+                        x.Score,
+                        x.Watched_episodes,
+                        x.Episodes,
+                        x.Type,
+                        x.My_status,
+                        x.Genres,
+                        x.Additional_information
+                    }).ToList();
+                    SearchResultsA.ItemsSource = items;
+                }
+                else if (GenreSelectedA.IsChecked == true)
+                {
+                    var items = context.anime_ilosc_ver2.Where(x => x.Genres == searchTextBoxA.Text).Select(x => new
+                    {
+                        x.Title,
+                        x.Score,
+                        x.Watched_episodes,
+                        x.Episodes,
+                        x.Type,
+                        x.My_status,
+                        x.Genres,
+                        x.Additional_information
+                    }).ToList();
+                    SearchResultsA.ItemsSource = items;
+                }
+                else if (ScoreSelectedA.IsChecked == true)
+                {
+                    int scoreFromTextBox = int.Parse(searchTextBoxA.Text);
+                    var items = context.anime_ilosc_ver2.Where(x => x.Score == scoreFromTextBox).Select(x => new
+                    {
+                        x.Title,
+                        x.Score,
+                        x.Watched_episodes,
+                        x.Episodes,
+                        x.Type,
+                        x.My_status,
+                        x.Genres,
+                        x.Additional_information
+                    }).ToList();
+                    SearchResultsA.ItemsSource = items;
+                }
+            }
+            if (selectedViewSource == manga_iloscViewSource)
+            {
+                if (StatusSelectedM.IsChecked == true)
+                {
+                    var items = context.manga_ilosc.Where(x => x.My_status == searchTextBoxM.Text).Select(x => new
+                    {
+                        x.Title,
+                        x.Score,
+                        x.Read_chapters,
+                        x.Chapters,
+                        x.Read_volumes,
+                        x.Volumes,
+                        x.Type,
+                        x.My_status,
+                        x.Genres,
+                        x.Additional_information
+                    }).ToList();
+                    SearchResultsM.ItemsSource = items;
+                }
+                else if (GenreSelectedM.IsChecked == true)
+                {
+                    var items = context.manga_ilosc.Where(x => x.Genres == searchTextBoxM.Text).Select(x => new
+                    {
+                        x.Title,
+                        x.Score,
+                        x.Read_chapters,
+                        x.Chapters,
+                        x.Read_volumes,
+                        x.Volumes,
+                        x.Type,
+                        x.My_status,
+                        x.Genres,
+                        x.Additional_information
+                    }).ToList();
+                    SearchResultsM.ItemsSource = items;
+                }
+                else if (ScoreSelectedM.IsChecked == true)
+                {
+                    int scoreFromTextBox = int.Parse(searchTextBoxM.Text);
+                    var items = context.manga_ilosc.Where(x => x.Score == scoreFromTextBox).Select(x => new
+                    {
+                        x.Title,
+                        x.Score,
+                        x.Read_chapters,
+                        x.Chapters,
+                        x.Read_volumes,
+                        x.Volumes,
+                        x.Type,
+                        x.My_status,
+                        x.Genres,
+                        x.Additional_information
+                    }).ToList();
+                    SearchResultsM.ItemsSource = items;
+                }
             }
         }
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
