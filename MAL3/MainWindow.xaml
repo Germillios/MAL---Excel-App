@@ -166,7 +166,6 @@
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="38,262,0,0">
                     <Button x:Name="btnUpdateM" Content="Update List" Command="{StaticResource UpdateCommand}" Style="{StaticResource NavigationButton}"/>
                     <Button x:Name="btnDeleteM" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="36 6" Command="{StaticResource DeleteCommand}" Style="{StaticResource NavigationButton}"/>
-                    <Button x:Name="btnUpdateFromMalM" Content="Update from MAL" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0 6" Command="{StaticResource UpdateFromMALCommand}" Style="{StaticResource NavigationButton}"/>
                 </StackPanel>
                 <Separator HorizontalAlignment="Left" Height="10" Margin="225,200,0,0" VerticalAlignment="Top" Width="400" RenderTransformOrigin="0.5,0.5">
                     <Separator.RenderTransform>
