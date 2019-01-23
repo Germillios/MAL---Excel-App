@@ -94,9 +94,9 @@
                 </Separator>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="440,25,55,142">
                     <TextBox x:Name="searchTextBoxA" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120"/>
-                    <Button x:Name="btnSearchA" HorizontalAlignment="Left" VerticalAlignment="Top" Command="{StaticResource SearchDatabaseCommand}" Style="{StaticResource NavigationButton}" Height="16" Margin="1">
+                    <Button x:Name="btnSearchA" HorizontalAlignment="Left" VerticalAlignment="Top" Command="{StaticResource SearchDatabaseCommand}" Style="{StaticResource NavigationButton}" Height="16" Width="16" Margin="1">
                         <StackPanel>
-                            <Image Source="Pictures/Lupa.png"/>
+                            <Image Source="Pictures/Lupa.png" Height="10" Width="10"/>
                         </StackPanel>
                     </Button>
                 </StackPanel>
@@ -176,9 +176,9 @@
                 </Separator>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="440,25,55,142">
                     <TextBox x:Name="searchTextBoxM" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120"/>
-                    <Button x:Name="btnSearchM" HorizontalAlignment="Left" VerticalAlignment="Top" Command ="{StaticResource SearchDatabaseCommand}" Style="{StaticResource NavigationButton}" Height="16" Margin="1">
+                    <Button x:Name="btnSearchM" HorizontalAlignment="Left" VerticalAlignment="Top" Command ="{StaticResource SearchDatabaseCommand}" Style="{StaticResource NavigationButton}" Height="16" Width="16" Margin="1">
                         <StackPanel>
-                            <Image Source="Pictures/Lupa.png"/>
+                            <Image Source="Pictures/Lupa.png" Height="10" Width="10"/>
                         </StackPanel>
                     </Button>
                 </StackPanel>
